@@ -1,0 +1,26 @@
+spring:
+  cache:
+    type: redis
+  jpa.database-platform: org.hibernate.dialect.H2Dialect
+  datasources:
+    #multiple datasource config
+    #h2
+    sql:
+      db00:
+        driver-class-name: 'org.h2.Driver'
+        jdbc-url: 'jdbc:h2:mem:test0'
+        username: test
+        password: 1234
+    nosql:
+      redis:
+        redis00:
+          host: 'localhost'
+          port: '6379'
+          password: '1234'
+  #REDIS Primary Setting
+  data:
+    redis:
+      host: 127.0.0.1
+      port: 6379
+      repositories:
+        enabled: false
