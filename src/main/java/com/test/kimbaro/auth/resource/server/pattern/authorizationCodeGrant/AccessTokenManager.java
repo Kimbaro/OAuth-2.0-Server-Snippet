@@ -1,0 +1,54 @@
+package com.test.kimbaro.auth.resource.server.pattern.authorizationCodeGrant;
+
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jws;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Base64;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+
+public class AccessTokenManager {
+
+    @Value("${jwt.private.key}")
+    private String secretKey; //JWT 보안키
+    private static final long ACCESS_TOKEN_EXPIRE_TIME = 1000L * 60 * 180; // Access Token 만료시간 3시간 = 180분
+
+    /**
+     * TODO : 여기에 Redis JPA Repo 구성할것
+     */
+
+    public String createAccessToken(String... claim) {
+        Claims claims = Jwts.claims().setSubject(claim[0]); //사용자 PK 정보를 저장
+        claims.put("exampleKey1", claim[1]);                //토큰 Payload 구성 인자
+        claims.put("exampleKey2", claim[2]);                //토큰 Payload 구성 인자
+        claims.put("exampleKey3", claim[3]);                //토큰 Payload 구성 인자
+        claims.put("exampleKey4", claim[4]);                //토큰 Payload 구성 인자
+
+        Date now = new Date();
+        return Jwts.builder()
+                .setClaims(claims)
+                .setIssuedAt(now)
+                .setExpiration(new Date(now.getTime() + ACCESS_TOKEN_EXPIRE_TIME))
+                .signWith(SignatureAlgorithm.HS256, secretKey)
+                .compact();
+    }
+
+
+    /**
+     * TODO: 구성해야합니다
+     * 1. getAuthentication() DB에 저장된 인증정보 조회
+     * 2. resolveToken() 토큰 파라미터 파싱 Authorization 제거, Bearer 제거
+     * 3. validateToken() 토큰 파라미터 검증
+     * */
+
+
+}
