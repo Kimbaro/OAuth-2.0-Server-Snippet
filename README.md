@@ -1,36 +1,36 @@
-OAuth2 ÇÁ·ÎÅäÄÝ ±â¹ÝÀÇ ÀÎÁõ ¹æ½ÄÀ» Àû¿ëÇÕ´Ï´Ù.
-JWT¸¦ È°¿ëÇÑ ÀÎÁõÄÚµå¸¦ ÀÌ¿ë ÇÕ´Ï´Ù.
+OAuth2 í”„ë¡œí† ì½œ ê¸°ë°˜ì˜ ì¸ì¦ ë°©ì‹ì„ ì ìš©í•©ë‹ˆë‹¤.
+JWTë¥¼ í™œìš©í•œ ì¸ì¦ì½”ë“œë¥¼ ì´ìš© í•©ë‹ˆë‹¤.
 
-º» ÇÁ·ÎÁ§Æ®´Â 4°¡Áö ÀÎÁõ ¹æ½ÄÀ» ±¸¼ºÇÏ°í »óÈ²¿¡ µû¶ó Àû¿ëÇÏ±â À§ÇÔ ÀÔ´Ï´Ù.
+ë³¸ í”„ë¡œì íŠ¸ëŠ” 4ê°€ì§€ ì¸ì¦ ë°©ì‹ì„ êµ¬ì„±í•˜ê³  ìƒí™©ì— ë”°ë¼ ì ìš©í•˜ê¸° ìœ„í•¨ ìž…ë‹ˆë‹¤.
 
-1. Authorization Code Grant ¦¢±ÇÇÑ ºÎ¿© ½ÂÀÎ ÄÚµå ¹æ½Ä
-2. Implicit Grant ¦¢ ¾Ï¹¬Àû ½ÂÀÎ ¹æ½Ä
-3. Resource Owner Password Credentials Grant ¦¢ ÀÚ¿ø ¼ÒÀ¯ÀÚ ÀÚ°ÝÁõ¸í ½ÂÀÎ ¹æ½Ä
-4. Client Credentials Grant ¦¢ Å¬¶óÀÌ¾ðÆ® ÀÚ°ÝÁõ¸í ½ÂÀÎ ¹æ½Ä
+1. Authorization Code Grant â”‚ê¶Œí•œ ë¶€ì—¬ ìŠ¹ì¸ ì½”ë“œ ë°©ì‹
+2. Implicit Grant â”‚ ì•”ë¬µì  ìŠ¹ì¸ ë°©ì‹
+3. Resource Owner Password Credentials Grant â”‚ ìžì› ì†Œìœ ìž ìžê²©ì¦ëª… ìŠ¹ì¸ ë°©ì‹
+4. Client Credentials Grant â”‚ í´ë¼ì´ì–¸íŠ¸ ìžê²©ì¦ëª… ìŠ¹ì¸ ë°©ì‹
 
-Âü°í : https://blog.naver.com/mds_datasecurity/222182943542
+ì°¸ê³  : [OAuth2.0 Document](https://oauth.net/2/)
 
-º» ÀÎÁõ ¹æ½ÄÀ» À§ÇØ OAuth2 ±¸¼º ¿ä¼ÒÇ×¸ñÀ» ¸ðµâ·Î ´ëÃ¼ÇÏ¿© ±¸¼º ÇÕ´Ï´Ù.
+ë³¸ ì¸ì¦ ë°©ì‹ì„ ìœ„í•´ OAuth2 êµ¬ì„± ìš”ì†Œí•­ëª©ì„ ëª¨ë“ˆë¡œ ëŒ€ì²´í•˜ì—¬ êµ¬ì„± í•©ë‹ˆë‹¤.
 
 ## Client
 
-- ÀÎÁõÄÚµå ¹ß±ÞÀ» ¹Þ±â À§ÇÑ »ç¿ëÀÚ ÀÔ´Ï´Ù.
+- ì¸ì¦ì½”ë“œ ë°œê¸‰ì„ ë°›ê¸° ìœ„í•œ ì‚¬ìš©ìž ìž…ë‹ˆë‹¤.
 
 ## Resource-Owner
 
-- ÀÚ°ÝºÎ¿© ÁÖÃ¼ÀÌ¸ç Å¬¶óÀÌ¾ðÆ®¿Í Åë½Å¿¡ Á÷Á¢ÀûÀÎ ¿µÇâÀ» ¹Þ½À´Ï´Ù.
-- Resource-Server¿Í Client°£ ¿øÇÒÇÑ ÀÎÁõÀÌ °¡´É ÇÏµµ·Ï Proxy¸¦ ¼öÇàÇÕ´Ï´Ù.
+- ìžê²©ë¶€ì—¬ ì£¼ì²´ì´ë©° í´ë¼ì´ì–¸íŠ¸ì™€ í†µì‹ ì— ì§ì ‘ì ì¸ ì˜í–¥ì„ ë°›ìŠµë‹ˆë‹¤.
+- Resource-Serverì™€ Clientê°„ ì›í• í•œ ì¸ì¦ì´ ê°€ëŠ¥ í•˜ë„ë¡ Proxyë¥¼ ìˆ˜í–‰í•©ë‹ˆë‹¤.
 
 ## Resource-Server(Authorization-Server)
 
-- Å¬¶óÀÌ¾ðÆ®¿¡°Ô ÀÎÁõÄÚµå¸¦ ¹ß±ÞÇÏ°í °ü¸®ÇÕ´Ï´Ù.
-- ¹ß±ÞµÈ ÀÎÁõÄÚµåÀÇ À¯È¿¼º, ±ÇÇÑ µî ÀÚ°ÝÀ» °ËÁõÇÏ´Â ÀÎÁõ ¸ðµâ ÀÔ´Ï´Ù.
+- í´ë¼ì´ì–¸íŠ¸ì—ê²Œ ì¸ì¦ì½”ë“œë¥¼ ë°œê¸‰í•˜ê³  ê´€ë¦¬í•©ë‹ˆë‹¤.
+- ë°œê¸‰ëœ ì¸ì¦ì½”ë“œì˜ ìœ íš¨ì„±, ê¶Œí•œ ë“± ìžê²©ì„ ê²€ì¦í•˜ëŠ” ì¸ì¦ ëª¨ë“ˆ ìž…ë‹ˆë‹¤.
 
 ## This Project
 
-- º» ÇÁ·ÎÁ§Æ®´Â 3°³ÀÇ ¼­ºñ½º¸¦ Á¦°ø ÇÕ´Ï´Ù.
-- ÀÎÁõÅ° Æò¹®Àº ÀÓÀÇ·Î »ý¼ºÇÑ UUID¸¦ È°¿ëÇÕ´Ï´Ù.
+- ë³¸ í”„ë¡œì íŠ¸ëŠ” 3ê°œì˜ ì„œë¹„ìŠ¤ë¥¼ ì œê³µ í•©ë‹ˆë‹¤.
+- ì¸ì¦í‚¤ í‰ë¬¸ì€ ìž„ì˜ë¡œ ìƒì„±í•œ UUIDë¥¼ í™œìš©í•©ë‹ˆë‹¤.
 
-1. AccessToken ¹ß±Þ/ÀÎÁõ
-2. RefreshToken ¹ß±Þ/ÀÎÁõ
-3. ÀÎÁõÅ°»ý¼º/´ëÄªÅ°¾ÏÈ£È­/¾ÏÈ£¹®¾ÐÃà
+1. AccessToken ë°œê¸‰/ì¸ì¦
+2. RefreshToken ë°œê¸‰/ì¸ì¦
+3. ì¸ì¦í‚¤ìƒì„±/ëŒ€ì¹­í‚¤ì•”í˜¸í™”/ì•”í˜¸ë¬¸ì••ì¶•
